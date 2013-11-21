@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyGames" Class="DALDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=59.44.63.45;Initial Catalog=MyGames;Persist Security Info=True;User ID=sa" SettingsObjectName="MyGames.DAL.Properties.Settings" SettingsPropertyName="MyGamesConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MyAccount" Member="MyAccount">
+    <Type Name="MyAccount">
+      <Column Name="AccountId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountPwd" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsOnline" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="MyAccount_Wizard" Member="Wizard" ThisKey="AccountId" OtherKey="AccountId" Type="Wizard" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wizard" Member="Wizard">
+    <Type Name="Wizard">
+      <Column Name="WizardId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="WizardName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="WizardLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentXP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxXP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentStamina" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxStamina" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Race" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Professional" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sex" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Silver" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Copper" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VIPLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Money" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MyAccount_Wizard" Member="MyAccount" ThisKey="AccountId" OtherKey="AccountId" Type="MyAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

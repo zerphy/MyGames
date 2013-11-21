@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.syfri.cn" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.syfri.cn" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.syfri.cn/Imports">
+      <xsd:import schemaLocation="http://192.168.1.106:9998/metadata?xsd=xsd0" namespace="http://www.syfri.cn" />
+      <xsd:import schemaLocation="http://192.168.1.106:9998/metadata?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.106:9998/metadata?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MyGames.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MasterService_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="MasterService_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="MasterService_Create_InputMessage">
+    <wsdl:part name="parameters" element="tns:Create" />
+  </wsdl:message>
+  <wsdl:message name="MasterService_Create_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="MasterService_GetMasterById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterById" />
+  </wsdl:message>
+  <wsdl:message name="MasterService_GetMasterById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="MasterService_Logon_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="MasterService_Logon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MasterService">
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://www.syfri.cn/MasterService/Register" message="tns:MasterService_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.syfri.cn/MasterService/RegisterResponse" message="tns:MasterService_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Create">
+      <wsdl:input wsaw:Action="http://www.syfri.cn/MasterService/Create" message="tns:MasterService_Create_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.syfri.cn/MasterService/CreateResponse" message="tns:MasterService_Create_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterById">
+      <wsdl:input wsaw:Action="http://www.syfri.cn/MasterService/GetMasterById" message="tns:MasterService_GetMasterById_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.syfri.cn/MasterService/GetMasterByIdResponse" message="tns:MasterService_GetMasterById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logon">
+      <wsdl:input wsaw:Action="http://www.syfri.cn/MasterService/Logon" message="tns:MasterService_Logon_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.syfri.cn/MasterService/LogonResponse" message="tns:MasterService_Logon_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
