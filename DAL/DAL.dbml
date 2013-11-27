@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyGames" Class="DALDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=59.44.63.45;Initial Catalog=MyGames;Persist Security Info=True;User ID=sa" SettingsObjectName="MyGames.DAL.Properties.Settings" SettingsPropertyName="MyGamesConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=172.16.1.12;Initial Catalog=MyGames;Persist Security Info=True;User ID=sa" SettingsObjectName="MyGames.DAL.Properties.Settings" SettingsPropertyName="MyGamesConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.MyAccount" Member="MyAccount">
     <Type Name="MyAccount">
       <Column Name="AccountId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

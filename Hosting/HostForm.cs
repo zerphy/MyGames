@@ -27,6 +27,17 @@ namespace Hosting
         public HostForm()
         {
             InitializeComponent();
+            this.Init();
+        }
+
+        private void Init()
+        {
+            string s = "a";
+            byte[] result = Encoding.Default.GetBytes(s);
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] output = md5.ComputeHash(result);
+            string v = BitConverter.ToString(output).Replace("-", "");
+            string w = v.ToLower();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
